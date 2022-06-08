@@ -7,8 +7,10 @@
     font-family: "Josefin Sans";
     src: url("/font/JosefinSans-Regular.ttf") format("truetype");
 }
-
-.gradient-custom {
+body {
+    font-family: 'Open Sans';
+}
+.gradient-kuki {
     /* fallback for old browsers */
     background: #00c2cb;
   
@@ -18,6 +20,18 @@
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(to right, rgba(0, 194, 203, 0.5), rgba(3, 152, 158, 0.5))
 }
+
+.text-kuki {
+    color : #00c2cb;
+}
+
+.btn-kuki:hover{color:#fff;background-color:#00c2cb;border-color:rgba(3, 152, 158, 0.5)}
+.btn-kuki,.btn-kuki:focus{box-shadow:0 0 0 .25rem #fff}
+.btn-kuki,.btn-kuki,.btn-kuki.active,.btn-kuki.dropdown-toggle.show,
+.btn-kuki:active{color:#fff;background-color:#00c2cb;border-color:rgba(3, 152, 158, 0.5)}
+.btn-kuki:focus,.btn-kuki:focus,.btn-kuki.active:focus,
+.btn-kuki.dropdown-toggle.show:focus,.btn-kuki:active:focus{box-shadow:0 0 0 .25rem #fff}
+.btn-kuki.disabled,.btn-kuki:disabled{background-color:transparent}
     
 @media (min-width: 768px) {
     .gradient-form {
@@ -25,7 +39,7 @@
     }
 }
 @media (min-width: 769px) {
-    .gradient-custom {
+    .gradient-kuki {
     border-top-right-radius: .3rem;
     border-bottom-right-radius: .3rem;
     }

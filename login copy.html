@@ -7,6 +7,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#00c2cb">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css" />
     <!-- MDB -->
@@ -55,7 +60,6 @@ $(endif)
                       
                       <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
                       $(endif)>
-                        <p>Masukkan Kode Voucher</p>
                         <div class="text-center mb-3">
                             <span id="infologin"></span>
                         </div>
@@ -72,7 +76,7 @@ $(endif)
                         </div>
                         $(if error)<div class="text-center text-danger">$(error)</div>$(endif)
                         <div class="text-center pt-1 mb-5 pb-1">
-                            <button class="btn btn-primary btn-block fa-lg gradient-custom mb-3" type="submit">Log
+                            <button class="btn btn-primary btn-block fa-lg gradient-kuki mb-3" type="submit">Log
                               in</button>
                               $(if trial == 'yes')
                             <div class="text-center text-muted">Coba gratis <a style="text-decoration: underline;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik
@@ -83,12 +87,54 @@ $(endif)
       
                     </div>
                   </div>
-                  <div class="col-lg-6 d-flex align-items-center gradient-custom">
+                  <div class="col-lg-6 d-flex align-items-center gradient-kuki">
                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                      <h4 class="mb-4">We are more than just a company</h4>
-                      <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                      <h4 class="mb-4">Voucher Tersedia :</h4>
+                      <div class="row g-4 text-black">
+                        <div class="col-lg-6">
+                          <div class="card text-center">
+                            <div class="card-header text-success"><h4>Rp. 2000</h4></div>
+                            <div class="card-body p-3">
+                              <h5 class="card-title text-muted">Unlimited</h5>
+                              <p class="card-text text-muted" style="white-space:nowrap;">Masa aktif 2 jam</p>
+                              <a href="#" class="btn btn-success">Pesan</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <div class="card text-center">
+                            <div class="card-header text-secondary"><h4>Rp. 5000</h4></div>
+                            <div class="card-body p-3">
+                              <h5 class="card-title text-muted">Unlimited</h5>
+                              <p class="card-text text-muted" style="white-space:nowrap;">Masa aktif 6 jam</p>
+                              <a href="#" class="btn btn-secondary ">Pesan</a>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="col-lg-6">
+                          <div class="card text-center">
+                            <div class="card-header text-warning"><h4>Rp. 7000</h4></div>
+                            <div class="card-body p-3">
+                              <h5 class="card-title text-muted">Unlimited</h5>
+                              <p class="card-text text-muted" style="white-space:nowrap;">Masa aktif 12 jam</p>
+                              <a href="#" class="btn btn-warning ">Pesan</a>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                          <div class="card text-center">
+                            <div class="card-header text-danger"><h4>Rp. 10000</h4></div>
+                            <div class="card-body p-3">
+                              <h5 class="card-title text-muted">Unlimited</h5>
+                              <p class="card-text text-muted" style="white-space:nowrap;">Masa aktif 24 jam</p>
+                              <a href="#" class="btn btn-danger ">Pesan</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
