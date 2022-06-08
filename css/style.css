@@ -1,11 +1,11 @@
 @font-face {
     font-family: "Open Sans";
-    src: url("/font/Open-Sans.ttf") format("truetype");
+    src: url("font/Open-Sans.ttf") format("truetype");
 }
 
 @font-face {
     font-family: "Josefin Sans";
-    src: url("/font/JosefinSans-Regular.ttf") format("truetype");
+    src: url("font/JosefinSans-Regular.ttf") format("truetype");
 }
 body {
     font-family: 'Open Sans';
@@ -44,3 +44,5 @@ body {
     border-bottom-right-radius: .3rem;
     }
 }
+
+.text-start{text-align:left!important}.text-end{text-align:right!important}.text-center{text-align:center!important}.text-decoration-none{text-decoration:none!important}.text-decoration-underline{text-decoration:underline!important}.text-decoration-line-through{text-decoration:line-through!important}.text-lowercase{text-transform:lowercase!important}.text-uppercase{text-transform:uppercase!important}.text-capitalize{text-transform:capitalize!important}.text-wrap{white-space:normal!important}.text-nowrap{white-space:nowrap!important}

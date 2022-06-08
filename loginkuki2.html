@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title id="title">KUKI NET HOTSPOT</title>
+    <meta name="theme-color" content="#00c2cb" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#00c2cb">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      html,
+        body,
+        header,
+        .view {
+          height: 100vh;
+        }
+
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 815px;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .view  {
+            height: 650px;
+          }
+        }
+
+        .intro-2 {
+            background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full page/img%20(11).jpg")no-repeat center center;
+            background-size: cover;
+        }
+        .top-nav-collapse {
+            background-color: #3f51b5 !important;
+        }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #3f51b5 !important;
+            }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #3f51b5!important;
+            }
+        }
+
+        .card {
+            background-color: rgba(229, 228, 255, 0.2);
+        }
+        .md-form label {
+            color: #ffffff;
+        }
+        h6 {
+            line-height: 1.7;
+        }
+
+
+        .card {
+            margin-top: 30px;
+            /*margin-bottom: -45px;*/
+
+        }
+
+        .md-form input[type=text]:focus:not([readonly]),
+        .md-form input[type=password]:focus:not([readonly]) {
+            border-bottom: 1px solid #8EDEF8;
+            box-shadow: 0 1px 0 0 #8EDEF8;
+        }
+        .md-form input[type=text]:focus:not([readonly])+label,
+        .md-form input[type=password]:focus:not([readonly])+label {
+            color: #8EDEF8;
+        }
+
+        .md-form .form-control {
+            color: #fff;
+        }
+
+        ::placeholder {
+          color : rgba(255,255,255,0.6);
+          opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+$(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+$(endif)
+     <!--Intro Section-->
+     <section class="view intro-2">
+      <div class="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+
+              <!--Form with header-->
+              <div class="card wow fadeIn" data-wow-delay="0.3s">
+                <div class="card-body">
+
+                  <!--Header-->
+                  <div class="form-header bg-white">
+                    <img src="img/logo.png" style="width: 125px;" alt="logo" class="mx-auto">
+                    
+                    <div class="text-center mb-2 d-none d-sm-block">
+                      <button id="btnvrc" class="btn gradient-kuki" onclick="voucher();"> Voucher</button>
+                      <button id="btnmem" class="btn gradient-kuki" onclick="member();"> Member</button>
+                    </div>
+                    <div class="text-center mb-2 d-block d-sm-none">
+                      <div class="btn-group btn-group-sm">
+                        <button id="btnvrc" class="btn btn-sm gradient-kuki" onclick="voucher();"> Voucher</button>
+                        <button id="btnmem" class="btn btn-sm gradient-kuki" onclick="member();"> Member</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Body-->
+                  <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                      $(endif)>
+                        <div class="text-center text-white mb-2">
+                            <span id="infologin"></span>
+                        </div>
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+
+                        <div class="md-form">
+                          <i class="fas fa-user prefix white-text"></i>
+                          <input type="text" id="username" class="form-control username" name="username" value="$(username)" placeholder="Kode Voucher">
+                          
+                        </div>
+
+                        <div class="md-form d-none" id="password-field">
+                          <i class="fas fa-lock prefix white-text"></i>
+                          <input type="password" id="password" class="form-control" name="password">
+                          <label for="password">Password</label>
+                        </div>
+                        $(if error)<div class="text-center text-danger">$(error)</div>$(endif)
+                        <div class="text-center">
+                          <button type="submit" class="btn aqua-gradient btn-lg">Log in</button>
+                          <a class="btn peach-gradient btn-lg" href="daftar_paket.html">Paket</a>
+                          <hr>
+                          $(if trial == 'yes')
+                            <div class="text-center text-white">Coba gratis <a class="text-underline" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a></div>
+                          $(endif)
+                        </div>
+                        
+                    </form>
+
+                </div>
+                <div class="card-footer">
+                  Voucher bisa dibeli di Telaga Asri Residence No.5 (Nuril)
+                </div>
+              </div>
+              <!--/Form with header-->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+<script type="text/javascript" src="js/kuki-login.js?v=1.1.2"></script>
+
+</body>
+
+</html>
