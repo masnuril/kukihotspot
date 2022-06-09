@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="full-height">
+
 <head>
-<title id="title"></title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="theme-color" content="#1FA2FF" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/style.css">
+    <meta name="theme-color" content="#00c2cb" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#00c2cb">
+  <title>KUKI NET HOTSPOT</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css" />
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <style>
+
+    html,
+        body,
+        header,
+        .jarallax {
+          height: 700px;
+        }
+
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .jarallax {
+            height: 100vh;
+          }
+        }
+
+        @media (min-width: 560px) and (max-width: 650px) {
+          header .jarallax h1 {
+            margin-bottom: .5rem !important;
+          }
+          header .jarallax h5 {
+            margin-bottom: .5rem !important;
+          }
+        }
+
+
+        @media (min-width: 660px) and (max-width: 700px) {
+          header .jarallax h1 {
+            margin-bottom: 1.5rem !important;
+          }
+          header .jarallax h5 {
+            margin-bottom: 1.5rem !important;
+          }
+        }
+
+        .top-nav-collapse {
+            background-color: #9da4b1 !important;
+        }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #9da4b1 !important;
+            }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #9da4b1!important;
+            }
+        }
+
+        footer.page-footer {
+            background-color: #9da4b1;
+        }
+
+  </style>
 $(if refresh-timeout)
 <script>
 	setTimeout(function(){
@@ -14,21 +96,74 @@ $(if refresh-timeout)
 </script>
 $(endif)
 </head>
+
 <body>
-<div class="main">
-<div class="container">
-$(if login-by == 'trial')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i> <h3>trial user</h3></div><br>
-	$(elif login-by != 'mac')
-		<div style="margin-top:20px; text-align: center;"><h3>Welcome</h3><i style="font-size:150px;" class="icon icon-user-circle-o">&#xf2be;</i><br> <h3 id="user">$(username)</h3></div><br>
-$(endif)
-<h3>Anda telah terhubung di jaringan <br /><b id="dname"></b></h3>
-<button class="button" onclick="window.location='./status'"><i class="icon icon-check">&#xe807;</i> Check Status</buton>
-</div>
-</div>
-<script type="text/javascript">
-	document.getElementById('title').innerHTML = window.location.hostname + " > success";	
+
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Intro Section -->
+    <div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('img/gradient2.png'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+      <div class="mask rgba-purple-slight">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+          <div class="row pt-5 mt-3">
+            <div class="col-md-12 wow fadeIn mb-3">
+              <div class="text-center">
+                <h1 class="display-4 font-weight-bold mb-5 wow fadeInUp">
+                    $(if login-by == 'trial')
+                    Hi, Trial user...
+                    $(elif login-by != 'mac')
+                    Hi, $(username)...terimakasih sudah bertransaksi dengan kami <span class="fa2x"><i class="fas fa-smile-beam"></i></span>
+                    $(endif)
+                </h1>
+                </li>
+                <h5 class="mb-5 wow fadeInUp" data-wow-delay="0.2s">Anda sudah terhubung di jaringan <strong id="dname"></strong>!</h5>
+                <div class="wow fadeInUp" data-wow-delay="0.4s">
+                  <a class="btn btn-purple btn-rounded" href="./status"><i class="fas fa-wifi left"></i> Status</a>
+                </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </header>
+  <!--Main Navigation-->
+
+
+  <!--Footer-->
+  <footer class="page-footer pt-4">
+
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+      <div class="container-fluid">
+        © 2022 Copyright: <a href="./login"> KUKI NET HOTSPOT </a>
+      </div>
+    </div>
+    <!--/.Copyright-->
+
+  </footer>
+  <!--/.Footer-->
+
+
+  <!--  SCRIPTS  -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  <script>
+    $(document).ready(() => {
+      new WOW().init();
+    });
+    document.getElementById('title').innerHTML = window.location.hostname + " > success";	
     document.getElementById('dname').innerHTML = window.location.hostname;	
-</script>
+  </script>
 </body>
+
 </html>

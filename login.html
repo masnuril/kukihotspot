@@ -2,99 +2,205 @@
 <html>
 
 <head>
-    <title id="title"></title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="theme-color" content="#1FA2FF" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style-old.css">
+    <title id="title">KUKI NET HOTSPOT</title>
+    <meta name="theme-color" content="#00c2cb" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#00c2cb">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/fontawesome-free-5.15.3-web/css/all.css" />
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- CUSTOM -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+      html,
+        body,
+        header,
+        .view {
+          height: 100vh;
+        }
 
+        @media (max-width: 740px) {
+          html,
+          body,
+          header,
+          .view {
+            height: 815px;
+          }
+        }
+
+        @media (min-width: 800px) and (max-width: 850px) {
+          html,
+          body,
+          header,
+          .view  {
+            height: 650px;
+          }
+        }
+
+        .intro-2 {
+            background: url("img/11.jpg")no-repeat center center;
+            background-size: cover;
+        }
+        .top-nav-collapse {
+            background-color: #3f51b5 !important;
+        }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #3f51b5 !important;
+            }
+        }
+        @media (min-width: 800px) and (max-width: 850px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #3f51b5!important;
+            }
+        }
+
+        .card {
+            background-color: rgba(229, 228, 255, 0.2);
+        }
+        .md-form label {
+            color: #ffffff;
+        }
+        h6 {
+            line-height: 1.7;
+        }
+
+
+        .card {
+            margin-top: 30px;
+            /*margin-bottom: -45px;*/
+
+        }
+
+        .md-form input[type=text]:focus:not([readonly]),
+        .md-form input[type=password]:focus:not([readonly]) {
+            border-bottom: 1px solid #8EDEF8;
+            box-shadow: 0 1px 0 0 #8EDEF8;
+        }
+        .md-form input[type=text]:focus:not([readonly])+label,
+        .md-form input[type=password]:focus:not([readonly])+label {
+            color: #8EDEF8;
+        }
+
+        .md-form .form-control {
+            color: #fff;
+        }
+
+        ::placeholder {
+          color : rgba(255,255,255,0.6);
+          opacity: 1;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="bg">
-    
-        $(if chap-id)
-        <form name="sendin" action="$(link-login-only)" method="post">
-            <input type="hidden" name="username" />
-            <input type="hidden" name="password" />
-            <input type="hidden" name="dst" value="$(link-orig)" />
-            <input type="hidden" name="popup" value="true" />
-        </form>
+$(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
 
-        <script type="text/javascript" src="md5.js"></script>
-        <script type="text/javascript">
-            function doLogin() {
-                document.sendin.username.value = document.login.username.value;
-                document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
-                    '$(chap-challenge)');
-                document.sendin.submit();
-                return false;
-            }
-        </script>
-        $(endif)
-          
-            <div id="main" class="main">
-            
-            <div class="box">
-                <img src="img/logo.png" alt="kemangi 41" style="border-radius: 5px; width:200px; height:auto;"/>
+    <script type="text/javascript" src="md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value +
+                '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+$(endif)
+     <!--Intro Section-->
+     <section class="view intro-2">
+      <div class="mask rgba-stylish-strong h-100 d-flex justify-content-center align-items-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 col-lg-6 col-md-10 col-sm-12 mx-auto mt-lg-5">
+
+              <!--Form with header-->
+              <div class="card wow fadeIn" data-wow-delay="0.3s">
+                <div class="card-body">
+
+                  <!--Header-->
+                  <div class="form-header bg-white">
+                    <img src="img/logo.png" style="width: 125px;" alt="logo" class="mx-auto">
+                    
+                    <div class="text-center mb-2 d-none d-sm-block">
+                      <button id="btnvrc" class="btn gradient-kuki" onclick="voucher();"> Voucher</button>
+                      <button id="btnmem" class="btn gradient-kuki" onclick="member();"> Member</button>
+                    </div>
+                    <div class="text-center mb-2 d-block d-sm-none">
+                      <div class="btn-group btn-group-sm">
+                        <button id="btnvrc" class="btn btn-sm gradient-kuki" onclick="voucher();"> Voucher</button>
+                        <button id="btnmem" class="btn btn-sm gradient-kuki" onclick="member();"> Member</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--Body-->
+                  <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                      $(endif)>
+                        <div class="text-center text-white mb-2">
+                            <span id="infologin"></span>
+                        </div>
+                        <input type="hidden" name="dst" value="$(link-orig)" />
+                        <input type="hidden" name="popup" value="true" />
+
+                        <div class="md-form">
+                          <i class="fas fa-user prefix white-text"></i>
+                          <input type="text" id="username" class="form-control username" name="username" value="$(username)" placeholder="Kode Voucher">
+                          
+                        </div>
+
+                        <div class="md-form d-none" id="password-field">
+                          <i class="fas fa-lock prefix white-text"></i>
+                          <input type="password" id="password" class="form-control" name="password">
+                          <label for="password">Password</label>
+                        </div>
+                        $(if error)<div class="text-center text-danger">$(error)</div>$(endif)
+                        <div class="text-center">
+                          <button type="submit" class="btn aqua-gradient btn-lg">Log in</button>
+                          <a class="btn peach-gradient btn-lg" href="daftar_paket.html">Paket</a>
+                          <hr>
+                          $(if trial == 'yes')
+                            <div class="text-center text-white">Coba gratis <a class="text-underline" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik di sini</a></div>
+                          $(endif)
+                        </div>
+                        
+                    </form>
+
+                </div>
+                <div class="card-footer text-white text-center">
+                  Voucher bisa dibeli di Telaga Asri Residence No.5 (Nuril, Ayu)
+                  <br>
+                  KUKI NET HOTSPOT
+                </div>
+              </div>
+              <!--/Form with header-->
+
             </div>
-            <div class="container">
-            <div class="box">
-                <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i> Voucher</button>
-                <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i> Member</button>
-                <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i> QR
-                    Code</button>
-            </div>
-            <div class="box" id="infologin"></div>
-
-            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
-                $(endif)>
-                <input type="hidden" name="dst" value="$(link-orig)" />
-                <input type="hidden" name="popup" value="true" />
-                <input class="username" name="username" type="text" value="$(username)" />
-                <input class="password" name="password" placeholder="Password" type="hidden" />
-                $(if error)<div class="notice">$(error)</div>$(endif)
-                <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i> Login</button>
-
-            </form>
-
-            $(if trial == 'yes')
-            <div class="box">Coba gratis <a style="text-decoration: underline; color:#000;" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">klik
-                    di sini</a></div>
-            $(endif)
-                <br />
-            <div>
-                Voucher bisa dibeli di gang Kluweh No.21 (Rosi) atau gang Kemangi No.41.
-            </div>
+          </div>
         </div>
-        </div>
-        <br />
-        <div class="box" style="color:#000;">
-            <i>Copyright &copy; 2019 Laksamadi Guko</i><br />
-            <i>Powered by </i><a id="mikhmon" style="color:#000; text-decoration:underline; display:block" href="https://laksa19.github.io">Mikhmon</a>
-            <!-- Tolong jangan dihilangkan bagian ini-->
-        </div>
-        </div>
+      </div>
+    </section>
 
-<script type="text/javascript">
-var hostname = window.location.hostname;
-document.getElementById('title').innerHTML = hostname  + " > login";
-
-document.login.username.focus();
-
-var config = {
-    loginvc : "Masukkan Kode Voucher kemudian klik login.",
-    loginup : "Masukkan Username dan Password <br> kemudian klik login.",
-    voucherCode : "Kode Voucher",
-    setCase : "false", // lowercase, uppercase or false
-    defaultMode : "voucher", // voucher or member
-
-}
-
-var _0x6b60=["\x69\x6E\x66\x6F\x6C\x6F\x67\x69\x6E","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x6C\x6F\x67\x69\x6E\x76\x63","\x6D\x69\x6B\x68\x6D\x6F\x6E","\x75\x73\x65\x72\x6E\x61\x6D\x65","\x6C\x6F\x67\x69\x6E","\x70\x61\x73\x73\x77\x6F\x72\x64","\x70\x6C\x61\x63\x65\x68\x6F\x6C\x64\x65\x72","\x76\x6F\x75\x63\x68\x65\x72\x43\x6F\x64\x65","\x76\x61\x6C\x75\x65","\x73\x65\x74\x43\x61\x73\x65","\x6C\x6F\x77\x65\x72\x63\x61\x73\x65","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x75\x70\x70\x65\x72\x63\x61\x73\x65","\x74\x6F\x55\x70\x70\x65\x72\x43\x61\x73\x65","\x6F\x6E\x6B\x65\x79\x75\x70","\x66\x6F\x63\x75\x73","\x74\x79\x70\x65","\x68\x69\x64\x64\x65\x6E","\x55\x73\x65\x72\x6E\x61\x6D\x65","\x6C\x6F\x67\x69\x6E\x75\x70","\x64\x65\x66\x61\x75\x6C\x74\x4D\x6F\x64\x65","\x6D\x65\x6D\x62\x65\x72","\x6F\x6E\x6C\x6F\x61\x64","\x4D\x69\x6B\x68\x6D\x6F\x6E","\x4D\x49\x4B\x48\x4D\x4F\x4E","\x3C\x63\x65\x6E\x74\x65\x72\x3E\x3C\x68\x32\x20\x73\x74\x79\x6C\x65\x3D\x27\x63\x6F\x6C\x6F\x72\x3A\x72\x65\x64\x27\x3E\x4A\x61\x6E\x67\x61\x6E\x20\x61\x73\x61\x6C\x20\x65\x64\x69\x74\x20\x62\x6F\x73\x6B\x75\x2C\x3C\x62\x72\x3E\x62\x61\x63\x61\x20\x6C\x69\x73\x65\x6E\x73\x69\x6E\x79\x61\x20\x6C\x61\x67\x69\x21\x20\x3C\x2F\x68\x33\x3E\x3C\x2F\x63\x65\x6E\x74\x65\x72\x3E","\x77\x72\x69\x74\x65","\x5B\x69\x64\x5E\x3D","\x5D","\x71\x75\x65\x72\x79\x53\x65\x6C\x65\x63\x74\x6F\x72\x41\x6C\x6C","\x6C\x65\x6E\x67\x74\x68","\x64\x69\x73\x70\x6C\x61\x79","\x73\x74\x79\x6C\x65","\x62\x6C\x6F\x63\x6B","\x63\x6F\x6C\x6F\x72","\x23\x30\x30\x30","\x79\x61\x72\x6B"];var infologin=document[_0x6b60[1]](_0x6b60[0]);infologin[_0x6b60[2]]= config[_0x6b60[3]];var mikhmon=document[_0x6b60[1]](_0x6b60[4])[_0x6b60[2]];var username=document[_0x6b60[6]][_0x6b60[5]];var password=document[_0x6b60[6]][_0x6b60[7]];username[_0x6b60[8]]= config[_0x6b60[9]];function setpass(){var _0xe3ccx6=username[_0x6b60[10]];if(config[_0x6b60[11]]== _0x6b60[12]){userlc= _0xe3ccx6[_0x6b60[13]]();username[_0x6b60[10]]= userlc;password[_0x6b60[10]]= userlc}else {if(config[_0x6b60[11]]== _0x6b60[14]){useruc= _0xe3ccx6[_0x6b60[15]]();username[_0x6b60[10]]= useruc;password[_0x6b60[10]]= useruc}else {username[_0x6b60[10]]= _0xe3ccx6;password[_0x6b60[10]]= _0xe3ccx6}}}function setuplowmem(){var _0xe3ccx6=username[_0x6b60[10]];if(config[_0x6b60[11]]== _0x6b60[12]){userlc= _0xe3ccx6[_0x6b60[13]]();username[_0x6b60[10]]= userlc}else {if(config[_0x6b60[11]]== _0x6b60[14]){useruc= _0xe3ccx6[_0x6b60[15]]();username[_0x6b60[10]]= useruc}else {username[_0x6b60[10]]= _0xe3ccx6}}}username[_0x6b60[16]]= setpass;var yark=mikhmon;function voucher(){username[_0x6b60[17]]();username[_0x6b60[16]]= setpass;username[_0x6b60[8]]= config[_0x6b60[9]];password[_0x6b60[18]]= _0x6b60[19];infologin[_0x6b60[2]]= config[_0x6b60[3]]}function member(){username[_0x6b60[17]]();username[_0x6b60[16]]= setuplowmem;username[_0x6b60[8]]= _0x6b60[20];password[_0x6b60[18]]= _0x6b60[7];infologin[_0x6b60[2]]= config[_0x6b60[21]]}if(config[_0x6b60[22]]== _0x6b60[23]){window[_0x6b60[24]]= member()};if(yark== _0x6b60[25]|| yark== _0x6b60[4]|| yark== _0x6b60[26]){}else {document[_0x6b60[28]](_0x6b60[27])};function Id(_0xe3ccxc){var _0xe3ccxd;var _0xe3ccxe=document[_0x6b60[31]](_0x6b60[29]+ _0xe3ccxc+ _0x6b60[30]);if(_0xe3ccxe){for(_0xe3ccxd= 0;_0xe3ccxd< (_0xe3ccxe[_0x6b60[32]]);_0xe3ccxd++){_0xe3ccxe[_0xe3ccxd][_0x6b60[34]][_0x6b60[33]]= _0x6b60[35];_0xe3ccxe[_0xe3ccxd][_0x6b60[34]][_0x6b60[36]]= _0x6b60[37]}}}Id(_0x6b60[38])
-
-
-</script>
+<script type="text/javascript" src="js/kuki-login.js?v=1.1.2"></script>
 
 </body>
 

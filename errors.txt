@@ -29,7 +29,7 @@ not-logged-in = Anda tidak masuk (ip $(ip))
 # IP address for user is to be assigned from ip pool, but there are no more
 # addresses in that pool
 
-ippool-empty = cannot assign ip address - no more free addresses from pool
+ippool-empty = tidak terdapat ip untuk disambungkan, ip address penuh
 
 # shutting-down
 # When shutdown is executed, new clients are not accepted
